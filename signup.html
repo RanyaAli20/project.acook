@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    
+    <form action="/submit_registration" method="post">
+        <h2> Sign up </h2>
+        <div>
+            <label for="username">الاسم:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="gender">الجنس:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="country">البلد:</label>
+            <select id="country" name="country" required>
+                <option value="ksa">ليبيا</option>
+                <option value="egypt">1</option>
+                <option value="uae">2</option>
+                <option value="jordan">3</option>
+            </select>
+        </div>
+        <div>
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" pattern="[a-zA-Z0-9]{1,15}" title="كلمة المرور يجب أن تحتوي على أرقام وحروف صغيرة فقط، ولا تتجاوز 15 حرفاً" required>
+        </div>
+        <div>
+            <label for="confirm_password">تأكيد كلمة المرور:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+        </div>
+        <div>
+            <button type="submit">ٌRegister Now</button>
+        </div>
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('كلمتا المرور غير متطابقتين.');
+            }
+        });
+    </script>
+</body>
+</html>
