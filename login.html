@@ -1,20 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>صفحة تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <div class="login">    
-     <h2 class="login-headr">login</h2>
-     <form>
-      <p><input type="text" placeholder="username"></p>
-      <p> <input type="password" placeholder="password"></p>
-      <p><input type="submit" value="login"></p>
-     </form>
-        
-    </div>
     
+    
+    <div class="login-container">
+        <h1> 𝓐𝓬𝓸𝓸𝓴𝓮 🍳🥘</h1>
+        <h2>تسجيل الدخول🔑</h2>
+        <form action="#">
+            <div class="input-group">
+                <label for="username">اسم المستخدم</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
 </body>
 </html>
