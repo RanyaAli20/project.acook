@@ -13,11 +13,11 @@ form {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px; /* جعل النموذج أضيق */
+    width: 400px; 
 }
 
 div {
-    margin-bottom: 10px; /* تقليل المسافة بين الحقول */
+    margin-bottom: 10px; 
 }
 
 label {
@@ -46,11 +46,11 @@ input[type="radio"] {
 input[type="submit"] {
     background-color: #ff9c4bea;
     color: white;
-    padding: 12px 60px; /* جعل الزر أكبر */
+    padding: 12px 60px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px; /* زيادة حجم النص في الزر */
+    font-size: 16px; 
 }
 
 input[type="submit"]:hover {
