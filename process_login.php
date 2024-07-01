@@ -1,19 +1,17 @@
 <?php
-session_start();
-
+require_once 'UserClass.php';
 require_once 'register_Database.php';
-require_once'UserClass.php';
+
 try {
-    if(isset($_POST['username'], $_POST['password'])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
         $db = new Database();
-        $user = $db->getUserByUsername($username);
+        $user = $db->getUser($username, $password);
 
-        if($user && password_verify($password, $user['password'])) {
-            $_SESSION['username'] = $username;
-            echo "تم تسجيل الدخول بنجاح. مرحباً، $username!";
+        if ($user) {
+            echo "تسجيل الدخول ناجح! مرحباً، " . $user['username'];
         } else {
             echo "اسم المستخدم أو كلمة المرور غير صحيحة.";
         }
