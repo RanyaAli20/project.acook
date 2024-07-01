@@ -41,29 +41,12 @@ class Database {
             return $e->getMessage();
         }
     }
-
-    public function getUserByUsername($username) {
+    public function getUser($username, $password) {
         try {
             $username = $this->conn->real_escape_string($username);
-
-            $sql = "SELECT * FROM user WHERE username = '$username'";
-
-            $result = $this->conn->query($sql);
-
-            if ($result && $result->num_rows > 0) {
-                return $result->fetch_assoc();
-            } else {
-                return null;
-            }
-        } catch (Exception $e) {
-            return null;
-        }
-    }
-    public function getUserBypassword($password) {
-        try {
             $password = $this->conn->real_escape_string($password);
 
-            $sql = "SELECT * FROM user WHERE username = '$password'";
+            $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
 
             $result = $this->conn->query($sql);
 
