@@ -1,6 +1,6 @@
 <?php
 require_once 'UserClass.php';
-require_once 'Class_Database';
+require_once 'Class_Database.php';
 
 try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'], $_POST['password'])) {
