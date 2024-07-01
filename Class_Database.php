@@ -59,7 +59,7 @@ class Database {
             return null;
         }
     }
-
+    
     public function closeConnection() {
         $this->conn->close();
     }

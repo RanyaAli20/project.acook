@@ -1,6 +1,6 @@
 <?php
 require_once 'UserClass.php';
-require_once 'register_Database.php';
+require_once 'Class_Database.php';
 
 try {
     // استقبال البيانات من النموذج
