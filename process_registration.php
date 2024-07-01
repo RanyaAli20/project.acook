@@ -7,7 +7,7 @@ $username = $_POST['name'];
 $email = $_POST['email'];
 $age = $_POST['age'];
 $gender = $_POST['gender'];
-$country = $_POST['country'];
+$country = $_POST['Country'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirm_password'];
 
