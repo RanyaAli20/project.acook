@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'register_Database.php';
-
+require_once'UserClass.php';
 try {
     if(isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];
