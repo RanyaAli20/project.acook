@@ -28,12 +28,25 @@ class Database {
                 VALUES ('$username', '$email', '$age', '$gender', '$country', '$password', '$confirm_password')";
 
         if ($this->conn->query($sql) === TRUE) {
-            return true; // Return true on successful insertion
+            return true; 
         } else {
-            return "Error: " . $sql . "<br>" . $this->conn->error; // Return error message on failure
+            return "Error: " . $sql . "<br>" . $this->conn->error;
         }
     }
 
+public function getUserByUsername($username) {
+    $username = $this->conn->real_escape_string($username);
+
+    $sql = "SELECT * FROM user WHERE username = '$username'";
+
+    $result = $this->conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        return $result->fetch_assoc();
+    } else {
+        return null;
+    }
+}
     public function closeConnection() {
         $this->conn->close();
     }
