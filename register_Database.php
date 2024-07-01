@@ -6,7 +6,7 @@ class Database {
     private $dbname = "project";
     private $conn;
 
-    // Constructor to establish connection
+    // الاتصال
     public function __construct() {
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
         if ($this->conn->connect_error) {
@@ -14,9 +14,8 @@ class Database {
         }
     }
 
-    // Method to insert user into database
+    // طريقة لإدراج المستخدم في قاعدة البيانات
     public function insertUser(User $user) {
-        // Escape variables for security
         $username = $this->conn->real_escape_string($user->getUsername());
         $email = $this->conn->real_escape_string($user->getEmail());
         $age = $this->conn->real_escape_string($user->getAge());
@@ -25,7 +24,6 @@ class Database {
         $password = $this->conn->real_escape_string($user->getPassword());
         $confirm_password = $this->conn->real_escape_string($user->getConfirmPassword());
 
-        // Prepare SQL statement
         $sql = "INSERT INTO user (username, email, age, gender, Country, password, confirm_password)
                 VALUES ('$username', '$email', '$age', '$gender', '$country', '$password', '$confirm_password')";
 
@@ -36,7 +34,6 @@ class Database {
         }
     }
 
-    // Method to close database connection
     public function closeConnection() {
         $this->conn->close();
     }
