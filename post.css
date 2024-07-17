@@ -17,3 +17,24 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+.header .logo h1 {
+    margin: 0;
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav button {
+    color:black;
+    text-decoration: none;
+    margin: 0 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
