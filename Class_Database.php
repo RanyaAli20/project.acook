@@ -60,6 +60,35 @@ class Database {
             return null;
         }
     }
+    public function getPosts() {
+        try {
+            $sql = "SELECT posts.id, posts.user_id, posts.title, posts.recipe_id, posts.ingredients, posts.meal_type, posts.country, posts.created_at, recipe.content 
+                    FROM posts 
+                    JOIN recipe ON posts.recipe_id = recipe.id";
+            $result = $this->conn->query($sql);
+
+            $posts = [];
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $recipe = new Recipe($row['recipe_id'], $row['content']);
+                    $post = new Post(
+                        $row['id'],
+                        $row['user_id'],
+                        $row['title'],
+                        $row['recipe_id'],
+                        $row['ingredients'],
+                        $row['meal_type'],
+                        $row['country'],
+                        $row['created_at']
+                    );
+                    $posts[] = ['post' => $post, 'recipe' => $recipe];
+                }
+            }
+            return $posts;
+        } catch (Exception $e) {
+            return [];
+        }
+    }
 
     public function closeConnection() {
         $this->conn->close();
