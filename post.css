@@ -71,3 +71,92 @@ body {
     margin-bottom: 20px;
     
 }
+.search-bar button {
+    padding: 10px;
+    background-color:orange;
+    color:black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color:white;
+}
+
+.search-options {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.search-options input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.new-post-button {
+    margin-bottom: 20px;
+}
+
+.new-post-button button {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    color:black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.new-post-button button:hover {
+    background-color:white;
+}
+
+.new-post-button a {
+    color:black;
+    text-decoration: none;
+}
+
+.profile-box {
+    background-color: wheat;
+    color:black;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px; /* مسافة بين صندوق الصفحة الشخصية وصندوق المناشير */
+}
+
+.profile-box button {
+    background-color: orange;
+    color:black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.profile-box button:hover {
+    background-color:white;
+    color: black;
+}
+
+.container {
+    flex-grow: 1;
+    padding: 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* مسافة بين صندوق المناشير وصندوق الصفحة الشخصية */
+    margin-left: 20px;
+}
+
+.post {
+    background-color: #fff;
+    padding: 10px;
