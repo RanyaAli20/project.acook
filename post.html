@@ -13,10 +13,14 @@
             <h1><br>  𝓟𝓸𝓼𝓽  📋🍜</h1>
         </div>
         <div class="nav">
-            <button onclick="navigateTo('home')">الصفحة الرئيسية</button>
-            <button onclick="logout()">تسجيل الخروج</button>
+            <button onclick="window.location.href='home.html'">الصفحة الرئيسية</button>
+            <button onclick="window.location.href='logout.html'">تسجيل الخروج</button>
         </div>
     </div>
+    
+    
+    
+    
     <h1>𝓐𝓬𝓸𝓸𝓴𝓮🍳🥘 </h1>
     
     <div class="main-content">
@@ -27,14 +31,18 @@
                 </div>
                 <br>
             <div class="search-bar">
+                
                 <button onclick="toggleSearch()">البحث باستخدام</button>
                 <div class="search-options">
+                    
                     <input type="text" placeholder="ابحث باسم الوصفة...">
+                    <input type="text" placeholder="ابحث  بنوع الوجبة...">
                     <input type="text" placeholder="ابحث باسم البلد...">
                     <input type="text" placeholder="ابحث بالمكونات...">
+                    <input type="text" placeholder="ابحث عن اكلة صحية ...">
                 </div>
             </div>
-            
+    
             <div class="new-post-button">
                 <button><a href="newpost.html">منشور جديد</a></button>
             </div>
@@ -45,11 +53,25 @@
     
             <!-- أضف المزيد من المنشورات هنا -->
         </div>
+        
     
         <div class="profile-box">
             <h2> 💁‍♂️</h2>
             <button onclick="navigateTo('profile')">اذهب للصفحة الشخصية</button>
         </div>
-    </div>
+        </div>
+        <script>
+            
+            function toggleSearch() {
+                var searchOptions = document.querySelector('.search-options');
+                if (searchOptions.style.display === 'flex') {
+                    searchOptions.style.display = 'none';
+                } else {
+                    searchOptions.style.display = 'flex';
+                }
+            }
+        </script>
+    
 </body>
 </html>
+    
