@@ -63,11 +63,11 @@ class Database {
 
     public function getPosts() {
         try {
-            $sql = "SELECT posts.id, posts.user_id, posts.title, posts.recipe_id, posts.ingredients, posts.meal_type, posts.country, posts.created_at, recipe.content 
+            $sql = "SELECT posts.id, posts.user_id, posts.title, posts.ingredients, posts.recipe_id, posts.meal_type, posts.country, posts.created_at, recipes.content 
                     FROM posts 
-                    JOIN recipe ON posts.recipe_id = recipe.id";
+                    JOIN recipes ON posts.recipe_id = recipes.id";
             $result = $this->conn->query($sql);
-
+    
             $posts = [];
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -90,6 +90,7 @@ class Database {
             return [];
         }
     }
+    
 
     public function insertPost(Post $post, Recipe $recipe) {
         try {

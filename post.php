@@ -268,7 +268,7 @@ $db->closeConnection();
 
     <div class="profile-box">
         <h2> 💁‍♂️</h2>
-        <button onclick="window.location.href='profile.html'">اذهب للصفحة الشخصية</button>
+        <button onclick="window.location.href='profile.php'">اذهب للصفحة الشخصية</button>
     </div>
 </div>
 
