@@ -1,23 +1,23 @@
 <?php
 class Post {
     private $id;
-    private $user_id ;
+    private $userId;
     private $title;
+    private $recipeId;
     private $ingredients;
-    private $recipe_id;
-    private $meal_type;
+    private $mealType;
     private $country;
-    private $created_at;
+    private $createdAt;
 
-    public function __construct($id, $user_id , $title, $ingredients , $recipe_id  , $meal_type , $country, $created_at) {
+    public function __construct($id, $userId, $title, $recipeId, $ingredients, $mealType, $country, $createdAt) {
         $this->id = $id;
-        $this->user_id  = $user_id ;
+        $this->userId = $userId;
         $this->title = $title;
-        $this->recipe_id  = $recipe_id ;
+        $this->recipeId = $recipeId;
         $this->ingredients = $ingredients;
-        $this->meal_type = $meal_type;
+        $this->mealType = $mealType;
         $this->country = $country;
-        $this->created_at = $created_at;
+        $this->createdAt = $createdAt;
     }
 
     public function getId() {
@@ -25,7 +25,7 @@ class Post {
     }
 
     public function getUserId() {
-        return $this->user_id ;
+        return $this->userId;
     }
 
     public function getTitle() {
@@ -33,7 +33,7 @@ class Post {
     }
 
     public function getRecipeId() {
-        return $this->recipe_id ;
+        return $this->recipeId;
     }
 
     public function getIngredients() {
@@ -41,7 +41,7 @@ class Post {
     }
 
     public function getMealType() {
-        return $this->meal_type;
+        return $this->mealType;
     }
 
     public function getCountry() {
@@ -49,7 +49,7 @@ class Post {
     }
 
     public function getCreatedAt() {
-        return $this->created_at;
+        return $this->createdAt;
     }
 }
 ?>
