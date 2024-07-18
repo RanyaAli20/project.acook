@@ -214,7 +214,6 @@ $db->closeConnection();
     </style>
 </head>
 <body>
-
 <div class="header">
     <div class="logo">
         <h1><br>  𝓟𝓸𝓼𝓽  📋🍜</h1>
@@ -252,7 +251,7 @@ $db->closeConnection();
         <?php if (!empty($posts)): ?>
             <?php foreach ($posts as $item): ?>
                 <div class="post">
-                    <h3>المستخدم <?php echo $item['post']->getUserId(); ?></h3>
+                    <h3>المستخدم <?php echo $item['username']; ?></h3>
                     <h4><?php echo $item['post']->getTitle(); ?></h4>
                     <p>المكونات: <?php echo $item['post']->getIngredients(); ?></p>
                     <p>نوع الوجبة: <?php echo $item['post']->getMealType(); ?></p>

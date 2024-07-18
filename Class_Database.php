@@ -63,9 +63,11 @@ class Database {
 
     public function getPosts() {
         try {
-            $sql = "SELECT posts.id, posts.user_id, posts.title, posts.ingredients, posts.recipe_id, posts.meal_type, posts.country, posts.created_at, recipes.content 
+            $sql = "SELECT posts.id, posts.user_id, posts.title, posts.ingredients, posts.recipe_id, posts.meal_type, posts.country, posts.created_at, recipes.content, user.username 
                     FROM posts 
-                    JOIN recipes ON posts.recipe_id = recipes.id";
+                    JOIN recipes ON posts.recipe_id = recipes.id
+                    JOIN user ON posts.user_id = user.id
+                    ORDER BY posts.id DESC";
             $result = $this->conn->query($sql);
     
             $posts = [];
@@ -82,7 +84,7 @@ class Database {
                         $row['country'],
                         $row['created_at']
                     );
-                    $posts[] = ['post' => $post, 'recipe' => $recipe];
+                    $posts[] = ['post' => $post, 'recipe' => $recipe, 'username' => $row['username']];
                 }
             }
             return $posts;
@@ -90,6 +92,7 @@ class Database {
             return [];
         }
     }
+    
     
 
     public function insertPost(Post $post, Recipe $recipe) {
