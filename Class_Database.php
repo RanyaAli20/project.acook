@@ -73,6 +73,7 @@ class Database {
                 while ($row = $result->fetch_assoc()) {
                     $recipe = new Recipe($row['recipe_id'], $row['content']);
                     $post = new Post(
+                        echo"tttttttttttttttttttttttttttttttttttttttttttt";
                         $row['id'],
                         $row['user_id'],
                         $row['title'],
@@ -94,14 +95,14 @@ class Database {
     public function insertPost(Post $post, Recipe $recipe) {
         try {
             $this->conn->begin_transaction();
-
+    
             // إدخال الوصفة في جدول الوصفات
             $recipeContent = $this->conn->real_escape_string($recipe->getContent());
             $recipeStmt = $this->conn->prepare("INSERT INTO recipes (content) VALUES (?)");
             $recipeStmt->bind_param("s", $recipeContent);
             $recipeStmt->execute();
             $recipeId = $this->conn->insert_id;
-
+    
             // إدخال المنشور في جدول المنشورات
             $userId = $this->conn->real_escape_string($post->getUserId());
             $title = $this->conn->real_escape_string($post->getTitle());
@@ -109,19 +110,20 @@ class Database {
             $mealType = $this->conn->real_escape_string($post->getMealType());
             $country = $this->conn->real_escape_string($post->getCountry());
             $createdAt = $this->conn->real_escape_string($post->getCreatedAt());
-
-            $postStmt = $this->conn->prepare("INSERT INTO posts (username, title, ingredients, recipe_id, meal_type, country, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    
+            $postStmt = $this->conn->prepare("INSERT INTO posts (user_id, title, ingredients, recipe_id, meal_type, country, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $postStmt->bind_param("issssss", $userId, $title, $ingredients, $recipeId, $mealType, $country, $createdAt);
             $postStmt->execute();
-
+    
             $this->conn->commit();
-
+    
             return true;
         } catch (Exception $e) {
             $this->conn->rollback();
             return $e->getMessage();
         }
     }
+    
 
     public function closeConnection() {
         $this->conn->close();

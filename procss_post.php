@@ -11,6 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title'], $_POST['ingre
     $mealType = $_POST['mealType'];
     $country = $_POST['country'];
 
+    if (isset($_SESSION['user_id'])) {
+        $userId = $_SESSION['user_id'];
+    } else {
+        echo "خطأ: المستخدم غير مسجل.";
+        exit();
+    }
+
+    $createdAt = date("Y-m-d H:i:s");
 
     $post = new Post(null, $userId, $title, null, $ingredients, $mealType, $country, $createdAt);
     $recipe = new Recipe(null, $recipeContent);
@@ -30,4 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title'], $_POST['ingre
 } else {
     echo "يرجى ملء جميع الحقول المطلوبة.";
 }
-
+?>

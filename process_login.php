@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'classUser.php';
 require_once 'Class_Database.php';
 
@@ -11,7 +12,10 @@ try {
         $user = $db->getUser($username, $password);
 
         if ($user) {
+            $_SESSION['user_id'] = $user['id'];
             echo "تسجيل الدخول ناجح! مرحباً، " . $user['username'];
+            header("Location: post.php");
+            exit();
         } else {
             echo "اسم المستخدم أو كلمة المرور غير صحيحة.";
         }
