@@ -1,5 +1,5 @@
 <?php
-require_once 'Database.php';
+require_once 'Class_Database.php';
 require_once 'classPost.php';
 require_once 'classrecipe.php';
 
@@ -221,7 +221,7 @@ $db->closeConnection();
     </div>
     <div class="nav">
         <button onclick="window.location.href='home.html'">الصفحة الرئيسية</button>
-        <button onclick="window.location.href='logout.html'">تسجيل الخروج</button>
+        <button onclick="window.location.href='login.html'">تسجيل الخروج</button>
     </div>
 </div>
 
