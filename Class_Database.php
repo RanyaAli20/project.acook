@@ -73,7 +73,6 @@ class Database {
                 while ($row = $result->fetch_assoc()) {
                     $recipe = new Recipe($row['recipe_id'], $row['content']);
                     $post = new Post(
-                        echo"tttttttttttttttttttttttttttttttttttttttttttt";
                         $row['id'],
                         $row['user_id'],
                         $row['title'],
