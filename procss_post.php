@@ -20,6 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title'], $_POST['ingre
 
     $createdAt = date("Y-m-d H:i:s");
 
+    echo "User ID: " . $userId . "<br>";
+echo "Title: " . $title . "<br>";
+echo "Ingredients: " . $ingredients . "<br>";
+echo "Recipe: " . $recipeContent . "<br>";
+echo "Meal Type: " . $mealType . "<br>";
+echo "Country: " . $country . "<br>";
+echo "Created At: " . $createdAt . "<br>";
+
+
     $post = new Post(null, $userId, $title, null, $ingredients, $mealType, $country, $createdAt);
     $recipe = new Recipe(null, $recipeContent);
 
