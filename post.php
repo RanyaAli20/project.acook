@@ -244,7 +244,7 @@ $db->closeConnection();
         </div>
 
         <div class="new-post-button">
-            <button><a href="newpost.html">منشور جديد</a></button>
+        <button onclick="window.location.href='newpost.html'">منشور جديد </button>
         </div>
     </div>
 
