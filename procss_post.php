@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title'], $_POST['ingre
 
     if ($result === true) {
         // إعادة التوجيه إلى صفحة المنشورات بعد النجاح
-        header("Location: posts.php");
+        header("Location: post.php");
         exit();
     } else {
         echo "فشل في إدخال المنشور: " . $result;
