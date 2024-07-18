@@ -10,44 +10,40 @@ body {
 }
 
 .container {
-    background-color:wheat;
+    background-color: wheat;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 80%;
+    max-width: 1200px;
 }
 
-.container h1 {
+.container h1, .container h2 {
     text-align: center;
     color: #333;
 }
 
 .form-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
+    flex: 1;
+    padding: 0 10px;
 }
 
 .form-group label {
-    display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.form-group select option {
-    padding: 10px;
-}
+
 .form-group input[type="text"],
-.form-group textarea {
-    width: 100%;
+.form-group textarea,
+.form-group select {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
 }
 
 .form-group textarea {
@@ -62,8 +58,17 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 20px;
+    align-self: center;
+    width: 200px;
 }
 
 .form-group button:hover {
     background-color: #ff9900;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
