@@ -227,7 +227,7 @@ $db->closeConnection();
 
 <div class="top-search-bar">
     <input type="text" placeholder="ابحث...">
-    <button>🔍 بحث</button>
+    <button>🔍 بحث</button> 
 </div>
 
 <h1>𝓐𝓬𝓸𝓸𝓴𝓮🍳🥘 </h1>
