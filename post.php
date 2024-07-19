@@ -2,6 +2,7 @@
 require_once 'Class_Database.php';
 require_once 'classPost.php';
 require_once 'classrecipe.php';
+require_once 'classuser';
 
 $db = new Database();
 $posts = $db->getPosts();
