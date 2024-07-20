@@ -126,6 +126,24 @@ class Database {
             return $e->getMessage();
         }
     }
+    public function deletePost($postId) {
+        try {
+            $postId = $this->conn->real_escape_string($postId);
+            $sql = "DELETE FROM posts WHERE id = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("i", $postId);
+            $stmt->execute();
+
+            if ($stmt->affected_rows > 0) {
+                return true;
+            } else {
+                throw new Exception("Error: Post not found or could not be deleted.");
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
     
 
     public function closeConnection() {
