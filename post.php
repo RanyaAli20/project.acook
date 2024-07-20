@@ -1,8 +1,8 @@
 <?php
 require_once 'Class_Database.php';
-require_once 'classPost.php';
-require_once 'classrecipe.php';
-require_once 'classuser';
+require_once  'classpost.php';
+require_once  'classrecipe.php';
+require_once  'classUser.php';
 
 $db = new Database();
 $posts = $db->getPosts();
@@ -181,6 +181,23 @@ $db->closeConnection();
             margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color:orange;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color:  wheat;
         }
 
         .top-search-bar {
@@ -259,6 +276,10 @@ $db->closeConnection();
                     <p>البلد: <?php echo $item['post']->getCountry(); ?></p>
                     <p>الوصفة: <?php echo $item['recipe']->getContent(); ?></p>
                     <small>تاريخ النشر: <?php echo $item['post']->getCreatedAt(); ?></small>
+                    <form method="post" action="delete_post.php" style="display: inline;">
+                        <input type="hidden" name="post_id" value="<?php echo $item['post']->getId(); ?>">
+                        <button type="submit" class="delete-button">حذف</button>
+                    </form>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
