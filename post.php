@@ -1,7 +1,7 @@
 <?php
 require_once 'Class_Database.php';
 require_once  'classpost.php';
-require_once  'classpost.php';
+require_once  'classrecipe.php';
 require_once  'classUser.php';
 
 $db = new Database();
